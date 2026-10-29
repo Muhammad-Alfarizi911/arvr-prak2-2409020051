@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>AR Kelompok 5 - Minggu 2 (Scene v1)</title>
+    <title>AR - Pekan 2 (Scene v1)</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
@@ -19,18 +19,23 @@
             <!--	Alas:	bidang	datar	(diputar	-90	derajat	agar	rebah)	-->
             <a-plane position="0	0	0" rotation="-90	0	0" width="2" height="2" color="#e9e5fa" opacity="0.2"
                 transparent="true"></a-plane>
-            <!--	Objek	1:	kubus	(warna	solid)	-->
-            <a-box position="-0.6	0.75	0" width="0.5" height="0.5" depth="0.5" color="#4C6EF5"
-                animation="property: rotation; to: 0 45 0; dur: 4000; loop: true; easing: linear" scale="1 2 1"></a-box>
-            <!--	Objek	2:	bola	(material:	metalness	&	roughness)	-->
-            <a-sphere position="0	0.3	0" radius="0.3" scale="1 2 1" color="#D9531E" metalness="0.9"
-                roughness="0.1"></a-sphere>
-            <!--	Objek	3:	silinder	+	animasi	rotasi	-->
-            <a-cylinder position="0.6 0.3 0" radius="0.2" height="0.6" color="#087f73"
-                animation="property: rotation; to: 360 0 0; dur: 4000; loop: true; easing: linear">
-            </a-cylinder>
-            <!--	Objek	4:	kotak	bertekstur	(gambar	dari	folder	assets)	-->
-            <a-box position="0	0.15	-0.7" width="0.5" height="0.3" depth="0.5" src="assets/tekstur.jpg"></a-box>
+            <!--	Mengelompokkan	objek	dalam	satu	entity	induk	-->
+            <a-entity id="kelompok-objek" position="0	0	0" scale="1	1	1">
+                <!--	Objek	1:	kubus	(warna	solid)	-->
+                <a-box id="kubus-biru" position="-0.6	0.75	0" width="0.5" height="0.5" depth="0.5" color="#4C6EF5"
+                    animation="property: rotation; to: 0 45 0; dur: 4000; loop: true; easing: linear"
+                    scale="1 2 1"></a-box>
+                <!--	Objek	2:	bola	(material:	metalness	&	roughness)	-->
+                <a-sphere id="bola-merah" position="0	0.3	0" radius="0.3" scale="1 2 1" color="#D9531E" metalness="0.9"
+                    roughness="0.1"></a-sphere>
+                <!--	Objek	3:	silinder	+	animasi	rotasi	-->
+                <a-cylinder id="silinder-hijau" position="0.6 0.3 0" radius="0.2" height="0.6" color="#087f73"
+                    animation="property: rotation; to: 360 0 0; dur: 4000; loop: true; easing: linear">
+                </a-cylinder>
+                <!--	Objek	4:	kotak	bertekstur	(gambar	dari	folder	assets)	-->
+                <a-box id="kotak-tekstur" position="0	0.15	-0.7" width="0.5" height="0.3" depth="0.5"
+                    src="assets/tekstur.jpg"></a-box>
+            </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
